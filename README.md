@@ -12,4 +12,4 @@
 6. Run `yarn build` to start production
 7. Happy to use :) 
 
-File structure reference : [medium.com](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
+File Structure Reference : [medium.com](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
