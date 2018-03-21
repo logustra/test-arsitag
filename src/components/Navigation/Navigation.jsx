@@ -5,15 +5,55 @@ import {
     Navbar,
     NavbarBrand,
 } from 'reactstrap';
+import Aux from '../../hoc/Aux/Aux';
 import NavigationItems from './NavigationItems/NavigationItems';
+import Sidebar from './Sidebar/Sidebar';
+import Backdrop from '../UI/Backdrop/Backdrop';
 import arsitagLogo from '../../assets/logo.png';
 
 const StyledNavbar = styled(Navbar) `
-    box-shadow: 0 2px 4px 0 var(--darksmoke);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 `
 
 class Navigation extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            show: false,
+        }
+    }
+
+    sidebarHandler = () => {
+        this.setState((prevState) => {
+            return { show: !prevState.show };
+        });
+    }
+
     render() {
+        let navigation, screenSize;
+        screenSize = window.screen.availWidth;
+
+        if(screenSize > '991') {
+            navigation = (
+                <NavigationItems
+                    class="d-none d-sm-none d-md-none d-lg-flex"
+                    type="navbar" />
+            )
+        } else {
+            navigation = (
+                <Aux>
+                    <Sidebar
+                        show={this.state.show}
+                        clicked={() => this.sidebarHandler()} />
+
+                    <Backdrop
+                        show={this.state.show}
+                        class="d-lg-none d-xl-none"
+                        clicked={() => this.sidebarHandler()} />
+                </Aux>
+            )
+        }
+
         return (
             <StyledNavbar color="faded" light expand="sm">
                 <Container>
@@ -21,7 +61,7 @@ class Navigation extends Component {
                         <img src={arsitagLogo} alt="arsitag" />
                     </NavbarBrand>
 
-                    <NavigationItems />
+                    {navigation}
                 </Container>
             </StyledNavbar>
         );

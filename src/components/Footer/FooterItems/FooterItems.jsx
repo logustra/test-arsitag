@@ -10,6 +10,7 @@ import {
 import FooItem from './FooItem/FooItem';
 
 const FooSosmed = styled.ul`
+
     li {
 
         a {

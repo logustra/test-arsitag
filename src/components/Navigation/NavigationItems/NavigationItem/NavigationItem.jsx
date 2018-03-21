@@ -11,7 +11,13 @@ import {
 const NavigationItem = (props) => {
     let item;
     if (props.type === "anchor") {
-        item = <NavLink href={props.url}>{props.children}</NavLink>;
+        item = (
+            <NavLink
+                href={props.url}
+                className={props.class}>
+                {props.children}
+            </NavLink>
+        );
     } else if ( props.type === "button") {
         item = (
             <Button

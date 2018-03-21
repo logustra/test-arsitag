@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Nav } from 'reactstrap';
 import styled from 'styled-components';
+
+import Aux from '../../../hoc/Aux/Aux';
+import media from '../../../themes/Media';
 import NavigationItem from './NavigationItem/NavigationItem';
 import searchIcon from '../../../assets/search.png';
 
@@ -11,20 +14,21 @@ const NavWrapperItem = styled.div`
 
     .navbar-nav {
         .nav-item {
+            &:hover {
+                .nav-link {
+                    color: var(--red);
+                }
+            }
+
             .nav-link {
                 font-size: 15px;
+                cursor: pointer;
             }
         }
 
         &:first-of-type {
            .nav-item {
                padding: 0 10px;
-
-               &:hover {
-                   .nav-link {
-                       color: var(--red);
-                   }
-               }
            }
         }
 
@@ -56,41 +60,142 @@ const NavWrapperItem = styled.div`
                         text-decoration: none;
                     }
                 }
-
-                .input-group-append {
-                    display: block;
-                    padding 2px 15px 0 15px;
-                    border: 1px solid #ced4da;
-                    border-top-right-radius: 4px;
-                    border-bottom-right-radius: 4px;
-                }
             }
         }
     }
+
+    ${media.xs`
+        background: var(--white);
+        display: block
+        position: fixed;
+        left: ${props => props.show ? '0' : '-100%'};
+        top: 0;
+        width: 75%;
+        height: 100%;
+        z-index: 1020;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        transition: left .5s;
+
+        .navbar-nav {
+            margin: 0 !important;
+
+            &:last-of-type {
+                .nav-item {
+                    &:nth-of-type(2):before {
+                        display: none !important;
+                    }
+
+                    &:last-of-type {
+                        border-bottom: 0;
+                    }
+                }
+            }
+
+            .nav-item {
+                padding: 0 !important;
+                border-bottom: 1px solid var(--darksmoke);
+            }
+        }
+    `}
+
+    ${media.sm`
+        background: var(--white);
+        display: block
+        position: fixed;
+        left: ${props => props.show ? '0' : '-100%'};
+        top: 0;
+        width: 75%;
+        height: 100%;
+        z-index: 1020;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        transition: left .5s;
+
+        .navbar-nav {
+            margin: 0 !important;
+            flex-direction: column;
+
+            &:last-of-type {
+                .nav-item {
+                    &:nth-of-type(2):before {
+                        display: none !important;
+                    }
+
+                    &:last-of-type {
+                        border-bottom: 0;
+                    }
+                }
+            }
+
+            .nav-item {
+                padding: 0 !important;
+                border-bottom: 1px solid var(--darksmoke);
+            }
+        }
+    `}
+
+    ${media.md`
+        background: var(--white);
+        display: block
+        position: fixed;
+        left: ${props => props.show ? '0' : '-100%'};
+        top: 0;
+        width: 75%;
+        height: 100%;
+        z-index: 1020;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        transition: left .5s;
+
+        .navbar-nav {
+            margin: 0 !important;
+            flex-direction: column;
+
+            &:last-of-type {
+                .nav-item {
+                    &:nth-of-type(2):before {
+                        display: none !important;
+                    }
+
+                    &:last-of-type {
+                        border-bottom: 0;
+                    }
+                }
+            }
+
+            .nav-item {
+                padding: 0 !important;
+                border-bottom: 1px solid var(--darksmoke);
+            }
+        }
+    `}
 `
 
-class NavigationItems extends Component {
-    render() {
-        return (
-            <NavWrapperItem>
+const NavigationItems = (props) => {
+    let items;
+
+    if(props.type === 'navbar') {
+        items = (
+            <Aux>
                 <Nav className="ml-4" navbar>
                     <NavigationItem
                         url="#"
                         type="anchor">
                         Inspirasi
-                                </NavigationItem>
+                    </NavigationItem>
 
                     <NavigationItem
                         url="#"
                         type="anchor">
                         Artikel
-                                </NavigationItem>
+                    </NavigationItem>
 
                     <NavigationItem
                         url="#"
                         type="anchor">
                         Profesional
-                                </NavigationItem>
+                    </NavigationItem>
                 </Nav>
 
                 <Nav navbar>
@@ -99,21 +204,19 @@ class NavigationItems extends Component {
                         class="font-weight-bold"
                         type="button">
                         Cari Profesional
-                                </NavigationItem>
+                    </NavigationItem>
 
                     <NavigationItem
-                        color="link"
-                        class="ml-2"
-                        type="button">
+                        class="ml-2 mr-2"
+                        type="anchor">
                         Sign Up
-                                </NavigationItem>
+                    </NavigationItem>
 
                     <NavigationItem
-                        color="link"
-                        class="mr-2"
-                        type="button">
+                        class="ml-2 mr-2"
+                        type="anchor">
                         Log In
-                                </NavigationItem>
+                    </NavigationItem>
 
                     <NavigationItem
                         placeholder="Cari Inspirasi..."
@@ -121,9 +224,56 @@ class NavigationItems extends Component {
                         <img src={searchIcon} alt="search" />
                     </NavigationItem>
                 </Nav>
-            </NavWrapperItem>
-        );
+            </Aux>
+        )
+    } else if(props.type === 'sidebar') {
+        items = (
+            <Aux>
+                <Nav className="ml-4" navbar>
+                    <NavigationItem
+                        url="#"
+                        type="anchor">
+                        Inspirasi
+                    </NavigationItem>
+
+                    <NavigationItem
+                        url="#"
+                        type="anchor">
+                        Artikel
+                    </NavigationItem>
+
+                    <NavigationItem
+                        url="#"
+                        type="anchor">
+                        Profesional
+                    </NavigationItem>
+                </Nav>
+
+                <Nav navbar>
+                    <NavigationItem
+                        type="anchor">
+                        Cari Profesional
+                    </NavigationItem>
+
+                    <NavigationItem
+                        type="anchor">
+                        Sign Up
+                    </NavigationItem>
+
+                    <NavigationItem
+                        type="anchor">
+                        Log In
+                    </NavigationItem>
+                </Nav>
+            </Aux>
+        )
     }
+
+    return (
+        <NavWrapperItem show={props.show} className={props.class}>
+            {items}
+        </NavWrapperItem>
+    );
 }
 
 export default NavigationItems;

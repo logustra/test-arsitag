@@ -39,7 +39,7 @@ class Footer extends Component {
 
                                <FooItems
                                     child="1"
-                                    class="list-unstyled" />
+                                    class="list-unstyled mb-4" />
                             </Col>
 
                             <Col md="4">
@@ -49,7 +49,7 @@ class Footer extends Component {
 
                                 <FooItems
                                     child="2"
-                                    class="list-unstyled" />
+                                    class="list-unstyled mb-4" />
                             </Col>
 
                             <Col md="4">
