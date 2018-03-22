@@ -4,7 +4,7 @@ injectGlobal`
     :root {
         --white: #ffffff;
         --smoke: #f7f7f7;
-        --mediumsmoke: #f4f4f4;
+        --mediumsmoke: #f1f1f1;
         --darksmoke: #d6d7d7;
         --red: #ff5a5e;
         --green: #51a94e;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledSidebarToggle = styled.button `
     background: transparent;
     border: 0;
+    padding: 0;
 
     &:hover,
     &:active,
@@ -15,7 +16,7 @@ const StyledSidebarToggle = styled.button `
 
     .toggle-icon {
         display: block;
-        width: 30px;
+        width: 25px;
         height: 3px;
         background: var(--gray);
         border-radius: 30px;
@@ -26,7 +27,7 @@ const StyledSidebarToggle = styled.button `
         }
 
         &:nth-of-type(2) {
-            width: 24px;
+            width: 19px;
             margin: 6px 0 6px 6px;
             opacity: ${props => props.show ? '0' : '1'};
         }

@@ -5,6 +5,7 @@ import {
     Navbar,
     NavbarBrand,
 } from 'reactstrap';
+
 import Aux from '../../hoc/Aux/Aux';
 import NavigationItems from './NavigationItems/NavigationItems';
 import Sidebar from './Sidebar/Sidebar';
@@ -56,8 +57,10 @@ class Navigation extends Component {
 
         return (
             <StyledNavbar color="faded" light expand="sm">
-                <Container>
-                    <NavbarBrand href="/">
+                <Container className="flex-nowrap flex-lg-wrap">
+                    <NavbarBrand
+                        href="/"
+                        className="mr-0 mr-lg-2">
                         <img src={arsitagLogo} alt="arsitag" />
                     </NavbarBrand>
 

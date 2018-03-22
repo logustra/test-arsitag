@@ -9,7 +9,7 @@ import searchIcon from '../../../assets/search.png';
 const Sidebar = (props) => {
     return (
         <Aux>
-            <InputGroup className="d-lg-none ml-5 mr-5">
+            <InputGroup className="d-lg-none ml-4 mr-4 ml-sm-5 mr-sm-5">
                 <Input placeholder="Cari Inspirasi..." />
                 <InputGroupAddon
                     addonType="append">

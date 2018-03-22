@@ -99,43 +99,7 @@ const NavWrapperItem = styled.div`
         }
     `}
 
-    ${media.sm`
-        background: var(--white);
-        display: block
-        position: fixed;
-        left: ${props => props.show ? '0' : '-100%'};
-        top: 0;
-        width: 75%;
-        height: 100%;
-        z-index: 1020;
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-        padding: 30px;
-        transition: left .5s;
-
-        .navbar-nav {
-            margin: 0 !important;
-            flex-direction: column;
-
-            &:last-of-type {
-                .nav-item {
-                    &:nth-of-type(2):before {
-                        display: none !important;
-                    }
-
-                    &:last-of-type {
-                        border-bottom: 0;
-                    }
-                }
-            }
-
-            .nav-item {
-                padding: 0 !important;
-                border-bottom: 1px solid var(--darksmoke);
-            }
-        }
-    `}
-
-    ${media.md`
+    ${media.mnsm_mxlg`
         background: var(--white);
         display: block
         position: fixed;

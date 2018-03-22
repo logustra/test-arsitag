@@ -7,6 +7,7 @@ const StyledFooter = styled.footer`
     background: var(--mediumsmoke);
     border-top: 1px solid var(--darksmoke);
     color: var(--gray);
+    margin-top: 65px;
 `
 
 const FooTop = styled.div`
