@@ -36,4 +36,66 @@ injectGlobal`
             border-bottom-right-radius: 4px;
         }
     }
+
+    .rate-1,
+    .rate-2,
+    .rate-3,
+    .rate-4,
+    .rate-5 {
+        font-size: 20px;
+        font-size: 25px;
+        letter-spacing: 0;
+        line-height: 35px;
+        color: var(--darksmoke);
+    }
+
+    .rate-1 {
+        span {
+            &:nth-of-type(1) {
+                color: var(--danger);
+            }
+        }
+    }
+
+    .rate-2 {
+        span {
+            &:nth-of-type(1),
+            &:nth-of-type(2) {
+                color: var(--danger);
+            }
+        }
+    }
+
+    .rate-3 {
+        span {
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+                color: var(--danger);
+            }
+        }
+    }
+
+    .rate-4 {
+        span {
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+                color: var(--danger);
+            }
+        }
+    }
+
+    .rate-5 {
+        span {
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4),
+            &:nth-of-type(5) {
+                color: var(--danger);
+            }
+        }
+    }
 `

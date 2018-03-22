@@ -14,6 +14,7 @@ import imgUser from '../../../../assets/logo_tumblr_2.png';
 const StyledCard = styled(Card)`
     border: 0;
     box-shadow: 0 2px 4px 0 #e6e7e8;
+    margin-bottom: 30px;
 `
 
 const StyledCardImg = styled(CardImg)`
@@ -90,6 +91,10 @@ const UserGroup = styled.div`
 
     .btn + .btn {
         margin-left: 15px;
+
+        @media only screen and (max-width: 360px) {
+            margin-left: 0;
+        }
     }
 
     .rate-1,
@@ -99,11 +104,6 @@ const UserGroup = styled.div`
     .rate-5 {
         display: flex;
         align-items: center;
-        font-size: 20px;
-        font-size: 25px;
-        letter-spacing: 0;
-        line-height: 35px;
-        color: var(--darksmoke);
 
         ${media.xs`
             justify-content: center;
@@ -112,56 +112,6 @@ const UserGroup = styled.div`
         ${media.sm`
             justify-content: center;
         `}
-    }
-
-    .rate-1 {
-        span {
-            &:nth-of-type(1) {
-                color: var(--danger);
-            }
-        }
-    }
-
-    .rate-2 {
-        span {
-            &:nth-of-type(1),
-            &:nth-of-type(2) {
-                color: var(--danger);
-            }
-        }
-    }
-
-    .rate-3 {
-        span {
-            &:nth-of-type(1),
-            &:nth-of-type(2),
-            &:nth-of-type(3) {
-                color: var(--danger);
-            }
-        }
-    }
-
-    .rate-4 {
-        span {
-            &:nth-of-type(1),
-            &:nth-of-type(2),
-            &:nth-of-type(3),
-            &:nth-of-type(4) {
-                color: var(--danger);
-            }
-        }
-    }
-
-    .rate-5 {
-        span {
-            &:nth-of-type(1),
-            &:nth-of-type(2),
-            &:nth-of-type(3),
-            &:nth-of-type(4),
-            &:nth-of-type(5) {
-                color: var(--danger);
-            }
-        }
     }
 
     .reviews-count {

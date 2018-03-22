@@ -14,6 +14,7 @@ import arsitagLogo from '../../assets/logo.png';
 
 const StyledNavbar = styled(Navbar) `
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    background: var(--white);
 `
 
 class Navigation extends Component {

@@ -20,10 +20,10 @@ const FooP = styled.p`
 `
 
 const FooterItem = (props) => {
-    let link;
+    let item;
 
     if (props.type === "anchor") {
-        link = (
+        item = (
             <FooLink
                 className={props.classText}
                 href={props.url}>
@@ -31,7 +31,7 @@ const FooterItem = (props) => {
             </FooLink>
         )
     } else {
-        link = (
+        item = (
             <FooP className={props.classText}>
                 {props.children}
             </FooP>
@@ -40,7 +40,7 @@ const FooterItem = (props) => {
 
     return (
         <FooItem className={props.classItem}>
-            {link}
+            {item}
         </FooItem>
     )
 }
