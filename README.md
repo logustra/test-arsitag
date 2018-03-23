@@ -13,3 +13,7 @@
 7. Happy to use :) 
 
 File Structure Reference : [medium.com](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
+
+React Binding Patterns : [medium.freecodecamp.org](https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56)
+
+What is Aux : [github.com](https://github.com/gajus/react-aux)
