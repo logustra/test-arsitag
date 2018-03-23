@@ -13,7 +13,7 @@ import InformationItem from './InformationItem/InformationItem';
 const StyledInformationItems = styled.ul`
     list-style: none;
     padding-left: 20px;
-    border-bottom: 2px solid var(--darksmoke);
+    border-bottom: 2px solid var(--mediumsmoke);
     padding-bottom: 20px;
     margin-bottom: 20px;
 

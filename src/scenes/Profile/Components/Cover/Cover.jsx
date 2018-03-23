@@ -89,12 +89,17 @@ const UserGroup = styled.div`
         }
     `}
 
+    @media only screen and (max-width: 370px) {
+        display: flex;
+        flex-direction: column;
+
+        .btn{
+            margin-left: 0 !important;
+        }
+    }
+
     .btn + .btn {
         margin-left: 15px;
-
-        @media only screen and (max-width: 360px) {
-            margin-left: 0;
-        }
     }
 
     .rate-1,

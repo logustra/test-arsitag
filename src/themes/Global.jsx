@@ -37,13 +37,8 @@ injectGlobal`
         }
     }
 
-    .rate-1,
-    .rate-2,
-    .rate-3,
-    .rate-4,
-    .rate-5 {
-        font-size: 20px;
-        font-size: 25px;
+    [class^=rate-] {
+        font-size: 24px;
         letter-spacing: 0;
         line-height: 35px;
         color: var(--darksmoke);
