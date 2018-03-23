@@ -62,13 +62,13 @@ const StyledInformationBottomItem = styled.li`
 const InformationItem = (props) => {
     let item;
 
-    if (props.type === 'iTopItem') {
+    if (props.type === 'iTop') {
         item = (
             <StyledInformationTopItem>
                 {props.children}
             </StyledInformationTopItem>
         )
-    } else if(props.type === "iMiddleItem") {
+    } else if(props.type === "iMiddle") {
         item = (
             <li>
                 <span>
@@ -76,7 +76,7 @@ const InformationItem = (props) => {
                 </span>
             </li>
         )
-    } else if (props.type === "iBottomItem") {
+    } else if (props.type === "iBottom") {
         item = (
             <StyledInformationBottomItem className={props.class}>
                 <a href={props.url}>

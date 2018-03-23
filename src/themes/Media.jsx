@@ -9,11 +9,11 @@ mn : min-width;
 mx : max-width;
 
 breakpoint
-xs : xtra small     < 576px;
-sm : small          ≥ 576px;
-md : medium         ≥ 768px;
-lg : large          ≥ 992px ;
-xl : xtra large     ≥ 1200px;
+xs : xtra small     = 576px;
+sm : small          = 576px;
+md : medium         = 768px;
+lg : large          = 992px ;
+xl : xtra large     = 1200px;
 
 example
 

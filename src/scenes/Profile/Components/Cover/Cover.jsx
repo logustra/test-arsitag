@@ -122,7 +122,7 @@ const UserGroup = styled.div`
 
 `
 
-const UserTitle = styled.h6`
+const UserTitle = styled.h5`
     font-weight: bold;
     font-size: 18px;
     margin: 0;

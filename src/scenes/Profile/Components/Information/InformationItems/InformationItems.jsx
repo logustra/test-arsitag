@@ -48,29 +48,29 @@ const InformationItems = (props) => {
     if (props.type === 'iTop') {
         items = (
             <StyledInformationItems>
-                <InformationItem type="iTopItem">
+                <InformationItem type={props.type}>
                     Lampu, Sekuriti &amp; Keamanan Kebakaran,
                     Marmer &amp; Batu
-                    </InformationItem>
-
-                <InformationItem type="iTopItem">
-                    Ardy Adlie
-                    </InformationItem>
-
-                <InformationItem type="iTopItem">
-                    Rukan Permata Senayan Blok E33-35, Jalan Tentara Pelajar,
-                    Kebayoran Lama, Kota Jakarta Selatan
-                    </InformationItem>
-
-                <InformationItem type="iTopItem">
-                    <span className="text-danger font-weight-bold">
-                        Telepon Sekarang
-                        </span>
                 </InformationItem>
 
-                <InformationItem type="iTopItem">
+                <InformationItem type={props.type}>
+                    Ardy Adlie
+                </InformationItem>
+
+                <InformationItem type={props.type}>
+                    Rukan Permata Senayan Blok E33-35, Jalan Tentara Pelajar,
+                    Kebayoran Lama, Kota Jakarta Selatan
+                </InformationItem>
+
+                <InformationItem type={props.type}>
+                    <span className="text-danger font-weight-bold">
+                        Telepon Sekarang
+                    </span>
+                </InformationItem>
+
+                <InformationItem type={props.type}>
                     Website
-                    </InformationItem>
+                </InformationItem>
             </StyledInformationItems>
         )
     } else if (props.type === 'iMiddle') {
@@ -78,11 +78,11 @@ const InformationItems = (props) => {
             <Aux>
                 <Title>Nominal proyek Rata-Rata</Title>
                 <StyledInformationItems>
-                    <InformationItem type="iMiddleItem">
+                    <InformationItem type={props.type}>
                         Rp 5 juta - 10 miliar
                     </InformationItem>
 
-                    <InformationItem type="iMiddleItem">
+                    <InformationItem type={props.type}>
                         Reprehenderit elit ipsum ullamco aute dolore dolor ut consequat. Qui veniam laborum sint id irure adipisicing adipisicing proident cupidatat ipsum. Id occaecat aliqua occaecat ad ullamco sint qui exercitation velit quis.
                     </InformationItem>
                 </StyledInformationItems>
@@ -97,25 +97,25 @@ const InformationItems = (props) => {
                         url="#"
                         class="list-inline-item"
                         icon={faFacebookF}
-                        type="iBottomItem" />
+                        type={props.type} />
 
                     <InformationItem
                         url="#"
                         class="list-inline-item"
                         icon={faInstagram}
-                        type="iBottomItem" />
+                        type={props.type} />
 
                     <InformationItem
                         url="#"
                         class="list-inline-item"
                         icon={faLinkedinIn}
-                        type="iBottomItem" />
+                        type={props.type} />
 
                     <InformationItem
                         url="#"
                         class="list-inline-item"
                         icon={faTwitter}
-                        type="iBottomItem" />
+                        type={props.type} />
                 </StyledInformationItems>
             </Aux>
         )
