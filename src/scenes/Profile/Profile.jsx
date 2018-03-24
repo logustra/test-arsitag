@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
-import axios from '../../services/Axios/Axios';
 
+import axios from '../../services/Axios/Axios';
 import Aux from '../../hoc/Aux/Aux';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import Cover from './Components/Cover/Cover';
 import Information from './Components/Information/Information';
 import Review from './Components/Review/Review';
@@ -58,8 +59,8 @@ class Profile extends Component {
             )
         }
 
-        return profile
+        return profile;
     }
 }
 
-export default Profile;
+export default withErrorHandler(Profile, axios);

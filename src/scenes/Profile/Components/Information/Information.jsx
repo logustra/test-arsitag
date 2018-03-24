@@ -11,20 +11,11 @@ const StyledInformation = styled(Card)`
 `
 
 class Information extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            name: props.name,
-            number: props.number,
-            location: props.location,
-            website: props.website,
-        }
-    }
 
     callNowHandler = () => {
         const callButton = document.querySelector('.information .card-body ul:first-of-type li a');
-        callButton.innerHTML = this.state.number;
-        callButton.setAttribute('href', `tel:${this.state.number}`);
+        callButton.innerHTML = this.props.number;
+        callButton.setAttribute('href', `tel:${this.props.number}`);
     }
 
     render() {
@@ -33,9 +24,9 @@ class Information extends Component {
                 <CardBody>
                     <InformationItems
                         type="iTop"
-                        name={this.state.name}
-                        location={this.state.location}
-                        website={this.state.website}
+                        name={this.props.name}
+                        location={this.props.location}
+                        website={this.props.website}
                         clicked={() => this.callNowHandler()} />
 
                     <InformationItems type="iMiddle" />
