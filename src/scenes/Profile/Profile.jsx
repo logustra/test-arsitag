@@ -57,7 +57,6 @@ class Profile extends Component {
                 </Aux>
             )
         }
-        console.log(this.state.data);
 
         return profile
     }
