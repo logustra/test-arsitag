@@ -52,7 +52,7 @@ const ProjectItem = (props) => {
                 </StyledCard>
             </Col>
         )
-    } else if (props.type === "services") {
+    } else if (props.type === "service") {
         item = (
             <Col sm="12">
                 <Title>{props.title}</Title>

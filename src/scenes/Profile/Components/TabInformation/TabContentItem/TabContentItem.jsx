@@ -9,6 +9,7 @@ const StyledTabPane = styled(TabPane)`
 `
 
 const TabContentItem = (props) => {
+
     return (
         <StyledTabPane tabId={props.id}>
             <h6 className="font-weight-bold">{props.title}</h6>

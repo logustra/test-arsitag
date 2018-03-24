@@ -6,9 +6,9 @@ import Aux from '../../hoc/Aux/Aux';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import Cover from './Components/Cover/Cover';
 import Information from './Components/Information/Information';
-import Review from './Components/Review/Review';
+import Reviews from './Components/Reviews/Reviews';
 import TabInformation from './Components/TabInformation/TabInformation';
-import Project from './Components/Project/Project';
+import Projects from './Components/Projects/Projects';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Profile extends Component {
@@ -47,12 +47,12 @@ class Profile extends Component {
                                 number={this.state.data.phone_mobile}
                                 location={this.state.data.location}
                                 website={this.state.data.website}/>
-                            <Review count={this.state.data.review_counter} />
+                            <Reviews count={this.state.data.review_counter} />
                         </Col>
 
                         <Col lg="8" xl="9">
                             <TabInformation />
-                            <Project />
+                            <Projects />
                         </Col>
                     </Row>
                 </Aux>
