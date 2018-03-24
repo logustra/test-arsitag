@@ -46,6 +46,7 @@ class TabInformation extends Component {
         super(props)
         this.state = {
             activeTab: 0,
+            limit: true,
             tabs: [
                 {
                     id: 0,
@@ -75,7 +76,9 @@ class TabInformation extends Component {
     }
 
     DetailTabHandler = () => {
-        alert("clicked");
+        this.setState( (prevState) => {
+            return { limit: !prevState.limit }
+        })
     }
 
     render() {
@@ -98,8 +101,9 @@ class TabInformation extends Component {
                     key={index}
                     title={tab.title}
                     id={tab.id}
+                    limit={this.state.limit}
                     clicked={() => this.DetailTabHandler()}>
-                    {tab.text.substring(0, 200)}
+                    {this.state.limit ? tab.text.substring(0, 200) : tab.text}
                 </TabContentItem>
             )
         });
@@ -116,7 +120,7 @@ class TabInformation extends Component {
                         {tabContents}
                     </StyledTabContent>
                 </CardBody>
-            </StyledTabInformation >
+            </StyledTabInformation>
         )
     }
 }

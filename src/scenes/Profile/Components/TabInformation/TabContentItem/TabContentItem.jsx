@@ -17,7 +17,7 @@ const TabContentItem = (props) => {
             <a className="text-danger font-weight-bold ml-2"
                 role="button"
                 onClick={props.clicked}>
-                Selengkapnya >
+                {props.limit ? 'Selengkapnya >' : 'Sembunyikan ^'}
             </a>
         </StyledTabPane>
     )
