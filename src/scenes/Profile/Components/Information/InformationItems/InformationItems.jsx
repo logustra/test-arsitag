@@ -54,12 +54,11 @@ const InformationItems = (props) => {
                 </InformationItem>
 
                 <InformationItem type={props.type}>
-                    Ardy Adlie
+                    {props.name}
                 </InformationItem>
 
                 <InformationItem type={props.type}>
-                    Rukan Permata Senayan Blok E33-35, Jalan Tentara Pelajar,
-                    Kebayoran Lama, Kota Jakarta Selatan
+                    {props.location}
                 </InformationItem>
 
                 <InformationItem type={props.type}>
@@ -70,7 +69,7 @@ const InformationItems = (props) => {
                 </InformationItem>
 
                 <InformationItem type={props.type}>
-                    Website
+                    <a href={props.website} target="_blank">{props.website}</a>
                 </InformationItem>
             </StyledInformationItems>
         )

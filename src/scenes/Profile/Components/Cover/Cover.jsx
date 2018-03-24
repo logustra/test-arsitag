@@ -142,7 +142,7 @@ const Cover = (props) => {
                 <UserImg src={imgUser} alt="User Image"/>
                 <UserBody>
                     <UserGroup>
-                        <UserTitle>Andra Martin</UserTitle>
+                        <UserTitle>{props.name}</UserTitle>
                         <div className="rate-4">
                             <span>&#9733;</span>
                             <span>&#9733;</span>
@@ -150,7 +150,7 @@ const Cover = (props) => {
                             <span>&#9733;</span>
                             <span>&#9733;</span>
 
-                            <span className="reviews-count">15 Reviews</span>
+                            <span className="reviews-count">{props.count} Reviews</span>
                         </div>
                     </UserGroup>
 

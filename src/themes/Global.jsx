@@ -13,6 +13,10 @@ injectGlobal`
         margin: 0;
     }
 
+    a {
+        color: var(--gray);
+    }
+
     .btn-line-danger {
         background: var(--white);
         border: 1px solid var(--danger);

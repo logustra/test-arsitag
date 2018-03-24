@@ -14,7 +14,10 @@ class Information extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            number: '+123456789',
+            name: props.name,
+            number: props.number,
+            location: props.location,
+            website: props.website,
         }
     }
 
@@ -30,6 +33,9 @@ class Information extends Component {
                 <CardBody>
                     <InformationItems
                         type="iTop"
+                        name={this.state.name}
+                        location={this.state.location}
+                        website={this.state.website}
                         clicked={() => this.callNowHandler()} />
 
                     <InformationItems type="iMiddle" />

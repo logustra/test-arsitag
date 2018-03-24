@@ -29,7 +29,7 @@ const Review = (props) => {
     return (
         <StyledCard>
             <CardBody>
-                <Title>Review (15)</Title>
+                <Title>Review ({props.count})</Title>
                 <ReviewItems />
             </CardBody>
         </StyledCard>
