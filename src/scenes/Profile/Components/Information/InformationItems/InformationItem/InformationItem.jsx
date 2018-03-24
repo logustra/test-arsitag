@@ -43,6 +43,10 @@ const StyledInformationTopItem = styled.li`
         content: url(${iconGlobe});
         margin-right: 15px;
     }
+
+    a {
+        cursor: pointer;
+    }
 `
 
 const StyledInformationBottomItem = styled.li`

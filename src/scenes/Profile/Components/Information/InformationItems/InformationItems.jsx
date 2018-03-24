@@ -63,9 +63,10 @@ const InformationItems = (props) => {
                 </InformationItem>
 
                 <InformationItem type={props.type}>
-                    <span className="text-danger font-weight-bold">
+                    <a className="text-danger font-weight-bold"
+                        onClick={props.clicked}>
                         Telepon Sekarang
-                    </span>
+                    </a>
                 </InformationItem>
 
                 <InformationItem type={props.type}>

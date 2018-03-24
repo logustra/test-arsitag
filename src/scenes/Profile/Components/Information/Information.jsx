@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Card, CardBody } from 'reactstrap';
 
@@ -10,16 +10,34 @@ const StyledInformation = styled(Card)`
     margin-bottom: 30px;
 `
 
-const Information = (props) => {
-    return (
-        <StyledInformation>
-            <CardBody>
-                <InformationItems type="iTop"/>
-                <InformationItems type="iMiddle"/>
-                <InformationItems type="iBottom"/>
-            </CardBody>
-        </StyledInformation>
-    );
+class Information extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            number: '+123456789',
+        }
+    }
+
+    callNowHandler = () => {
+        const callButton = document.querySelector('.information .card-body ul:first-of-type li a');
+        callButton.innerHTML = this.state.number;
+        callButton.setAttribute('href', `tel:${this.state.number}`);
+    }
+
+    render() {
+        return (
+            <StyledInformation className="information">
+                <CardBody>
+                    <InformationItems
+                        type="iTop"
+                        clicked={() => this.callNowHandler()} />
+
+                    <InformationItems type="iMiddle" />
+                    <InformationItems type="iBottom" />
+                </CardBody>
+            </StyledInformation>
+        );
+    }
 }
 
 export default Information;
