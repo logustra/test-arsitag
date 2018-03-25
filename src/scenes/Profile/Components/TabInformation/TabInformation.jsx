@@ -46,24 +46,17 @@ class TabInformation extends Component {
         super(props)
         this.state = {
             activeTab: 0,
-            limit: true,
-            tabs: [
+            limits: [
                 {
-                    id: 0,
-                    title: 'About',
-                    text: 'Sunt ipsum sit mollit non occaecat reprehenderit quis id. Do deserunt commodo magna est sunt elit aliqua labore. Eiusmod sunt eiusmod veniam sunt dolor commodo anim aliquip ex sunt. Aliqua ea Lorem magna commodo laboris nisi duis. Laboris occaecat officia consectetur consequat est dolor. Cupidatat anim sit et Lorem ut ut anim reprehenderit esse.',
+                    tab: true,
                 },
                 {
-                    id: 1,
-                    title: 'Projects',
-                    text: 'Occaecat ad eiusmod eiusmod culpa aliquip adipisicing magna exercitation non. Non velit Lorem in duis reprehenderit cillum. Nostrud do amet elit fugiat minim fugiat sit sunt occaecat veniam enim. Est magna eiusmod id sunt occaecat magna sunt deserunt pariatur aliquip excepteur.',
+                    tab: true,
                 },
                 {
-                    id: 2,
-                    title: 'Reviews',
-                    text: 'Tempor velit nulla id sint enim sit fugiat excepteur minim mollit esse eu ex dolore. Veniam exercitation cupidatat ex qui. Reprehenderit sit nostrud id nulla eiusmod proident. Esse amet exercitation qui nisi eiusmod voluptate non. Qui laborum velit sit anim consectetur. Cupidatat qui laborum ut ipsum elit eiusmod ut ad incididunt in adipisicing enim.',
+                    tab: true,
                 },
-            ]
+            ],
         }
     }
 
@@ -75,35 +68,95 @@ class TabInformation extends Component {
         }
     }
 
-    DetailTabHandler = () => {
-        this.setState( (prevState) => {
-            return { limit: !prevState.limit }
-        })
+    Tab0 = () => {
+        if (this.state.limits[0].tab) {
+            this.setState({
+                limits: [
+                    { tab: false },
+                    { tab: true },
+                    { tab: true },
+                ]
+            })
+        } else (
+            this.setState({
+                limits: [
+                    { tab: true },
+                    { tab: true },
+                    { tab: true },
+                ]
+            })
+        )
+    }
+
+    Tab1 = () => {
+        if (this.state.limits[1].tab) {
+            this.setState({
+                limits: [
+                    { tab: true },
+                    { tab: false },
+                    { tab: true },
+                ]
+            })
+        } else (
+            this.setState({
+                limits: [
+                    { tab: true },
+                    { tab: true },
+                    { tab: true },
+                ]
+            })
+        )
+    }
+
+    Tab2 = () => {
+        if (this.state.limits[2].tab) {
+            this.setState({
+                limits: [
+                    { tab: true },
+                    { tab: true },
+                    { tab: false },
+                ]
+            })
+        } else (
+            this.setState({
+                limits: [
+                    { tab: true },
+                    { tab: true },
+                    { tab: true },
+                ]
+            })
+        )
     }
 
     render() {
-        let tabItems, tabContents;
+        let tabItems, tabContents, DetailTabHandler;
 
-        tabItems = this.state.tabs.map((tab, index) => {
+        DetailTabHandler = [
+            this.Tab0,
+            this.Tab1,
+            this.Tab2,
+        ]
+
+        tabItems = this.props.datas.map( (data, index) => {
             return (
                 <TabInformationItem
                     key={index}
                     class={classnames({ active: this.state.activeTab === index })}
                     clicked={() => this.TabHandler(index)}>
-                    {tab.title}
+                    {data.title}
                 </TabInformationItem>
             )
         });
 
-        tabContents = this.state.tabs.map((tab, index) => {
+        tabContents = this.props.datas.map( (data, index) => {
             return (
                 <TabContentItem
                     key={index}
-                    title={tab.title}
-                    id={tab.id}
-                    limit={this.state.limit}
-                    clicked={() => this.DetailTabHandler()}>
-                    {this.state.limit ? tab.text.substring(0, 200) : tab.text}
+                    title={data.title}
+                    id={data.id}
+                    limit={this.state.limits[index].tab}
+                    clicked={() => DetailTabHandler[index]()}>
+                    {this.state.limits[index].tab ? data.text.substring(0, 200) : data.text}
                 </TabContentItem>
             )
         });

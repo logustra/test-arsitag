@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Card, CardBody } from 'reactstrap';
 
 import media from '../../../../themes/Media';
 import ReviewItem from './ReviewItem/ReviewItem';
-import imgUsr from '../../../../assets/logo_tumblr_22.png';
 
 const StyledCard = styled(Card) `
     border: 0;
@@ -42,66 +41,32 @@ const StyledReviewItems = styled.ul`
     }
 `
 
-class Reviews extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            reviews: [
-                {
-                    img: imgUsr,
-                    name: 'Andra Martin',
-                    rate: '2',
-                    comment: 'Dolor laboris velit dolor in mollit ex sit nisi cupidatat nisi ullamco et amet consectetur.'
-                },
-                {
-                    img: imgUsr,
-                    name: 'John Doe',
-                    rate: '3',
-                    comment: 'Exercitation occaecat veniam ea exercitation laborum nisi ad do cupidatat cupidatat aliquip.'
-                },
-                {
-                    img: imgUsr,
-                    name: 'Andrew Matt',
-                    rate: '4',
-                    comment: 'Pariatur adipisicing anim irure adipisicing ea et commodo dolor eiusmod amet.'
-                },
-                {
-                    img: imgUsr,
-                    name: 'Matt Orto',
-                    rate: '5',
-                    comment: 'Exercitation anim laboris cupidatat anim ea mollit sit.'
-                },
-            ]
-        }
-    }
+const Reviews = (props) => {
+    let reviews;
 
-    render() {
-        let reviews;
-
-        reviews = this.state.reviews.map( (review, index) => {
-            return (
-                <ReviewItem
-                    key={index}
-                    src={review.img}
-                    alt={review.img}
-                    name={review.name}
-                    rate={review.rate}>
-                    {review.comment}
-                </ReviewItem>
-            )
-        })
-
+    reviews = props.datas.map((data, index) => {
         return (
-            <StyledCard>
-                <CardBody>
-                    <Title>Review ({this.props.count})</Title>
-                    <StyledReviewItems className="list-unstyled">
-                        {reviews}
-                    </StyledReviewItems>
-                </CardBody>
-            </StyledCard>
+            <ReviewItem
+                key={index}
+                src={data.img}
+                alt={data.img}
+                name={data.name}
+                rate={data.rate}>
+                {data.comment}
+            </ReviewItem>
         )
-    }
+    })
+
+    return (
+        <StyledCard>
+            <CardBody>
+                <Title>Review ({props.count})</Title>
+                <StyledReviewItems className="list-unstyled">
+                    {reviews}
+                </StyledReviewItems>
+            </CardBody>
+        </StyledCard>
+    )
 }
 
 export default Reviews;

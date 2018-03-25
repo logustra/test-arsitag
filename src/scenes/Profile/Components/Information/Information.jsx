@@ -14,12 +14,20 @@ class Information extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            call: null
+            call: {
+                number: null,
+                text: 'Telepon Sekarang',
+            }
         }
     }
 
     callNowHandler = () => {
-        this.setState({ call: `tel:${this.props.number}` })
+        this.setState({
+            call: {
+                number: `tel:${this.props.number}`,
+                text: this.props.number
+            }
+         })
     }
 
     render() {
